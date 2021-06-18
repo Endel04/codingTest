@@ -14,10 +14,9 @@ def solution(numbers):
             # number[j]는 두번째 선택한 숫자
             plus_value = numbers[i] + numbers[j]
             if (numbers[i] + numbers[j]) not in answer:
-                # list 끝 부분에 값을 삽입
                 answer.append(plus_value)
-    answer.sort()
-    return answer
+    # set(집합) 처리를 하면서 중복 제거와 오름차순 정렬을 깔끔하게 해결
+    return list(set(answer))
 
 def main():
     numbers = [5, 0, 2, 7]
